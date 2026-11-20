@@ -41,7 +41,7 @@ A set seed lets you reproduce deals within the same game version. With the same 
 - [Getting started](docs/en/getting-started.md) — Play your first set
 - [User manual](docs/en/user-manual.md) — Controls, settings, scoring, and review
 - [Ichigaya Bidding System](docs/en/bidding-system.md) — Conventions and AI support
-- [Japanese–English terminology](docs/terminology.md) — Definitions and preferred terms
+- [Terminology](docs/en/terminology.md) — Definitions of the terms used in the game and the documents
 - [日本語 README](README.ja.md)
 
 ## Feedback and community

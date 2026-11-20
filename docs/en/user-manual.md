@@ -1,6 +1,6 @@
 # User Manual — Bridge Atelier
 
-[README](../../README.md) · [Getting Started](getting-started.md) · [日本語](../ja/user-manual.md) · [Terminology](../terminology.md)
+[README](../../README.md) · [Getting Started](getting-started.md) · [日本語](../ja/user-manual.md) · [Terminology](terminology.md)
 
 This manual covers controls, settings, scoring, and review. The **Windows version is the full reference version**; Chapter 11 covers differences in the browser version. For individual bidding conventions, see the [Ichigaya Bidding System](bidding-system.md).
 

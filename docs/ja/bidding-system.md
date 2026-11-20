@@ -2,7 +2,7 @@
 
 > 規約版 `Ichigaya-v1.1.4` に基づきます。CPUの対応状況は、ビディングAI `Ichigaya-1.8.0`（Bridge Atelier 1.14.6）のものです。
 
-[English](../en/bidding-system.md) · [用語集](../terminology.md) · [完全リファレンス](bidding-reference.md)
+[English](../en/bidding-system.md) · [用語集](terminology.md) · [完全リファレンス](bidding-reference.md)
 
 ## 1. このガイドの使い方
 

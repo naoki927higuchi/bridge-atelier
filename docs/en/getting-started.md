@@ -36,7 +36,7 @@ After each board, review the auction, card play, and score. In human-plus-three-
 
 - [User Manual](user-manual.md) — Controls, settings, scoring, and review
 - [Ichigaya Bidding System](bidding-system.md) — Conventions and AI support
-- [Japanese–English terminology](../terminology.md) — Definitions and preferred terms
+- [Terminology](terminology.md) — Definitions of the terms used in the game and the documents
 
 ---
 

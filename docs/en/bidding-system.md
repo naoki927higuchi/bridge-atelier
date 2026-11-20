@@ -2,7 +2,7 @@
 
 > Based on system version `Ichigaya-v1.1.4`. CPU support status refers to bidding AI `Ichigaya-1.8.0` (Bridge Atelier 1.14.6).
 
-[日本語](../ja/bidding-system.md) · [Terminology](../terminology.md) · [Full reference](bidding-reference.md)
+[日本語](../ja/bidding-system.md) · [Terminology](terminology.md) · [Full reference](bidding-reference.md)
 
 ## 1. How to use this guide
 

@@ -3,7 +3,7 @@
 > **This is the official English translation of the Japanese Bidding Reference.** The [Japanese edition](../ja/bidding-reference.md) is the sole authoritative specification of the meaning of the Ichigaya Bidding System. If this translation and the Japanese edition differ, the Japanese edition prevails. The [Bidding System](bidding-system.md) is a practical guide.
 > System version `Ichigaya-v1.1.4`.
 
-[Practical guide (Bidding System)](bidding-system.md) · [Terminology](../terminology.md) · [日本語](../ja/bidding-reference.md)
+[Practical guide (Bidding System)](bidding-system.md) · [Terminology](terminology.md) · [日本語](../ja/bidding-reference.md)
 
 ## Contents
 

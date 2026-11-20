@@ -41,7 +41,7 @@ Bridge Atelierは、ほかの席をAIが担当する、一人用のコントラ�
 - [はじめに](docs/ja/getting-started.md) — 最初のセットを始めるまで
 - [操作マニュアル](docs/ja/user-manual.md) — 画面、操作、設定、採点、振り返り
 - [市ヶ谷ビディング規約](docs/ja/bidding-system.md) — 取り決めとAIの対応状況
-- [日英用語集](docs/terminology.md) — 用語の定義と対訳
+- [用語集](docs/ja/terminology.md) — 用語の定義と対訳
 - [English README](README.md)
 
 ## フィードバック

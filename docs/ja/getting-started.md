@@ -36,7 +36,7 @@ Bridge Atelierで最初のセットを始めるための短い案内です。詳
 
 - [操作マニュアル](user-manual.md)：画面、操作、設定、採点、振り返り
 - [市ヶ谷ビディング規約](bidding-system.md)：コールの取り決めとAIの対応状況
-- [日英用語集](../terminology.md)：用語の意味と対訳
+- [用語集](terminology.md)：用語の意味と対訳
 
 ---
 

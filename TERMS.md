@@ -44,7 +44,7 @@ The following public documents are provided under the [Creative Commons Attribut
 - User Manual (Japanese and English)
 - Bidding System (Japanese and English)
 - Bidding Reference (Japanese and English)
-- Terminology
+- Terminology (Japanese and English)
 
 The game, its source code, and materials created by third parties are not covered by CC BY 4.0. Screenshots of the game screen and gameplay footage may be used under the permission in Section 2 of these terms, not under CC BY 4.0.
 

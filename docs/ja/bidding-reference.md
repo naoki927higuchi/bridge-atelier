@@ -3,7 +3,7 @@
 > **本書は、市ヶ谷ビディング規約の唯一の意味仕様の正本です。** 日本語版が意味の最終基準で、英語版は本書に従う公式翻訳、[Bidding System](bidding-system.md) は実戦ガイドです。
 > 規約版 `Ichigaya-v1.1.4`。
 
-[実戦ガイド（Bidding System）](bidding-system.md) · [用語集](../terminology.md) · [English](../en/bidding-reference.md)
+[実戦ガイド（Bidding System）](bidding-system.md) · [用語集](terminology.md) · [English](../en/bidding-reference.md)
 
 ## 目次
 
