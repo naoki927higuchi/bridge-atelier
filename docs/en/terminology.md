@@ -92,7 +92,7 @@ Terms are grouped by topic, with related terms placed next to each other.
 | Term | Abbr. | Definition | Notes | Japanese |
 |---|---|---|---|---|
 | Ichigaya Bidding System | — | The bidding system created for Bridge Atelier. The CPU follows it, and the hints explain it. | The official public name. "This game's system" on screen refers to the same system. | 市ヶ谷ビディング規約 |
-| System version | — | The version number of the system. | Currently Ichigaya-v1.1.4 (Bridge Atelier 1.14.6). Separate from the game version and the AI version. | 規約版 |
+| System version | — | The version number of the system. | Currently Ichigaya-v1.1.6 (Bridge Atelier 1.14.8). Separate from the game version and the AI version. | 規約版 |
 | Guarantee | GUARANTEE | Lengths, HCP, specific cards or obligations that the system fixes. Later decisions build on them. | — | 保証 |
 | Typical range | — | The usual HCP, typical distributions and practice. Not strict limits. | Not a guarantee. The system treats it separately from the CPU estimate, but the game currently shows them together. | 通常目安 |
 | CPU estimate | CPU_ESTIMATE | The strength, contract quality and candidate scores that the CPU estimates from its own hand and the public auction. | Separate from the typical range in the system. The game currently shows them together. | AIの推定 |
@@ -103,7 +103,7 @@ Terms are grouped by topic, with related terms placed next to each other.
 | Jacoby 2NT | D09 | A direct 2NT over a natural 1♥ / 1♠. An artificial GF that strictly guarantees 4+ support and agrees that major as trumps. | The continuations are defined in the system but not supported by the CPU. The CPU does not start Jacoby 2NT. | ジャコビー2NT |
 | Gerber | — | A direct 4♣ over a natural 1NT / 2NT opening. It asks for the number of aces, and a following 5♣ asks for kings. | No queen ask. For CPU support, see the [Bidding System](bidding-system.md). | ガーバー |
 | Plain Blackwood | — | 4NT after a trump agreement. It asks for the number of aces, and a following 5NT asks for the number of kings. | No RKCB and no queen ask. For CPU support, see the [Bidding System](bidding-system.md). | プレーン・ブラックウッド |
-| Quantitative 4NT | — | 4NT with no trump agreement when a natural NT strength is known. An invitation to 6NT (NF). | Defined in the system but not supported by the CPU. | 量的4NT |
+| Quantitative 4NT | — | 4NT with no trump agreement when a natural NT strength is known. An invitation to 6NT (NF). | Not an ace ask. Opener declines with Pass and accepts with 6NT. For CPU support, see the [Bidding System](bidding-system.md). | 量的4NT |
 | Artificial fourth suit forcing | FSF | An artificial bid of the fourth suit, used only in four specified sequences (A–D). It asks partner for one answer. Not GF. | Only in the four specified sequences. Not GF. | 人工第四スート・フォーシング |
 | Reverse | — | A natural rebid by opener that shows a new suit, higher than the first suit, at the 2 level. The second suit has 4+ cards and the first suit is longer. F1. | — | リバース |
 | 2/1 / two-step obligation | R01 / R02 | A non-jump new-suit response at the 2 level to a one-of-a-suit opening (2/1), and the obligations that come with it: one rebid by opener and, below game, one rebid by responder. 2/1 is not GF. | 1♣–2♦ is a jump new suit, so it is GF, not 2/1. | 2/1と二段階義務 |

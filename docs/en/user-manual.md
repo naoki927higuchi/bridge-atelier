@@ -4,7 +4,7 @@
 
 This manual covers controls, settings, scoring, and review. The **Windows version is the full reference version**; Chapter 11 covers differences in the browser version. For individual bidding conventions, see the [Ichigaya Bidding System](bidding-system.md).
 
-> This manual is based on Bridge Atelier 1.14.6.
+> This manual is based on Bridge Atelier 1.14.9.
 
 ## Contents
 

@@ -6,7 +6,7 @@ Bridge Atelier (the Windows version and the browser version) includes the third-
 
 本ゲーム（Windows版・Web版）には、以下の第三者のソフトウェアと素材が含まれます。各項目には、それぞれのライセンスが適用され、その項目については[利用条件](TERMS.ja.md)よりも優先します。AFはこれらを再許諾しません。
 
-This list covers Bridge Atelier 1.14.6.
+This list covers Bridge Atelier 1.14.9.
 
 ## Unity runtime
 

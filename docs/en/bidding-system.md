@@ -1,6 +1,6 @@
 # Ichigaya Bidding System — Practical Guide
 
-> Based on system version `Ichigaya-v1.1.4`. CPU support status refers to bidding AI `Ichigaya-1.8.0` (Bridge Atelier 1.14.6).
+> Based on system version `Ichigaya-v1.1.6`. CPU support status refers to bidding AI `Ichigaya-1.9.1` (Bridge Atelier 1.14.8).
 
 [日本語](../ja/bidding-system.md) · [Terminology](terminology.md) · [Full reference](bidding-reference.md)
 
@@ -121,13 +121,14 @@ If an opponent intervenes with a numeric bid, the obligation to answer Stayman i
 
 ## 7. Representative artificial bids
 
-| Convention | Initiation and meaning | CPU support (1.14.6) |
+| Convention | Initiation and meaning | CPU support (1.14.8) |
 |---|---|---|
 | Stayman | `1NT–2♣`, asks for a four-card major | Initiates, answers, and handles the main continuations |
 | Jacoby 2NT | Direct `2NT` over natural 1M, 4+ support, GF | Does not initiate / answers and continuations not implemented |
-| Gerber | Direct `4♣` over natural 1NT/2NT, asks for total aces; `5♣` asks for kings | Does not initiate / answers total A and K counts |
+| Gerber | Direct `4♣` over natural 1NT/2NT, asks for total aces; `5♣` asks for kings. The same whether or not responder is a passed hand | Does not initiate / answers total A and K counts |
 | Plain Blackwood | `4NT` after trump agreement, asks total aces; `5NT` asks total kings | Initiates, answers, and chooses the contract |
-| Quantitative 4NT | Invites 6NT (NF) when no trump suit is agreed and natural NT strength is known | Neither initiates nor answers |
+| Quantitative 4NT | Invites 6NT (NF) when no trump suit is agreed and natural NT strength is known. Not an ace ask. Opener declines with Pass and accepts with `6NT`. A direct `4NT` over 1NT/2NT is the same whether or not responder is a passed hand | Initiates over 2NT (9–10 HCP), not over 1NT / as opener, decides whether to decline or accept |
+| Direct 6NT | Direct `6NT` over natural 1NT/2NT. Names the natural final contract (TO PLAY, NF). Neither an invitation nor an ask. The same whether or not responder is a passed hand | Initiates over 2NT (11+ HCP), not over 1NT / as opener, adopts it by Pass |
 | Artificial fourth suit forcing | Artificial fourth suit in four specified sequences; F1, not GF | Initiates, answers, and handles the continuations fixed by the system. Undefined continuations are not filled in |
 | 4NT ask over the special 4M | `4NT` immediately after `4♥ / 4♠`, asks total aces, then total kings and queens ([8.2](#82-4nt-ask-over-the-special-4m)) | Initiates, answers, and chooses the final contract |
 

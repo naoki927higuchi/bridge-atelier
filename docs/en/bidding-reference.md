@@ -1,7 +1,7 @@
 # Ichigaya Bidding System — Complete Reference
 
 > **This is the official English translation of the Japanese Bidding Reference.** The [Japanese edition](../ja/bidding-reference.md) is the sole authoritative specification of the meaning of the Ichigaya Bidding System. If this translation and the Japanese edition differ, the Japanese edition prevails. The [Bidding System](bidding-system.md) is a practical guide.
-> System version `Ichigaya-v1.1.4`.
+> System version `Ichigaya-v1.1.6`.
 
 [Practical guide (Bidding System)](bidding-system.md) · [Terminology](terminology.md) · [日本語](../ja/bidding-reference.md)
 
@@ -257,7 +257,7 @@ The following are, in principle, first responses in an uncontested auction by a 
 | D09: natural 1M–direct 2NT | Artificial, **4+ (strict)** in M, GF, agrees M | [Chapter 8](#8-jacoby-2nt). Not a natural NT proposal |
 
 - The overlap of typically 10 points between J01 and J02 is a matter of discretion, not a double definition of meaning.
-- The simple raises J01/M01 also apply to a passed hand. Other rules are not automatically extended to passed hands.
+- The simple raises J01/M01 also apply to a passed hand. Direct Gerber (`4♣`, [9.1](#91-gerber)), quantitative 4NT (`4NT`) and direct 6NT (`6NT`, both in [9.3](#93-quantitative-4nt)) over a 1NT/2NT opening also have the same meaning whether or not responder is a passed hand. Other rules are not automatically extended to passed hands.
 
 ### 4.2 First-response choice with weak hands
 
@@ -479,7 +479,7 @@ The context of each row is immediately after the complete sequence above. The an
 | `1NT–3NT` | Natural TO PLAY | [Typical] 9+ |
 
 - [Typical] A direct weak 2M is typically 0–7. None of these is an HCP guarantee. "Always six cards" is not added to the 5+ of a direct 2M over 1NT.
-- A direct 4♣ over 1NT is Gerber, and a direct 4NT is quantitative 4NT ([chapter 9](#9-gerber-blackwood-and-quantitative-4nt)).
+- A direct 4♣ over 1NT is Gerber, a direct 4NT is quantitative 4NT, and a direct 6NT names the natural final contract (TO PLAY, NF) ([chapter 9](#9-gerber-blackwood-and-quantitative-4nt)).
 
 ### 7.2 Stayman
 
@@ -548,7 +548,7 @@ ST03: in the text of the system, this name is used only to refer to the artifici
 
 ### 9.1 Gerber
 
-1. **Initiation**: a **direct 4♣ over a natural 1NT/2NT opening**. A 4♣ immediately after a 2NT answer to FSF does not automatically become Gerber.
+1. **Initiation**: a **direct 4♣ over a natural 1NT/2NT opening**. The meaning is the same whether or not responder is a passed hand (the initial Pass is reflected in the strength estimate, but it is not a condition for using Gerber). A 4♣ immediately after a 2NT answer to FSF does not automatically become Gerber.
 2. **Meaning of the ask**: artificial, asks for aces, F1 (obligation to answer).
 3. **Answers and guarantees**:
 
@@ -596,8 +596,11 @@ ST03: in the text of the system, this name is used only to refer to the artifici
 - [Typical] Direct 4NT over 1NT (16–18): responder typically has a balanced 15–16. Opener declines with 16, accepts with 18, and with 17 compares sources of tricks and the like.
 - [Typical] Direct 4NT over 2NT (22–24): responder typically has a balanced 9–10. Opener declines with 22, accepts with 24, and compares with 23.
 - The numbers are guidelines, not strict guarantees. With 13–14 opposite 1NT, normally 3NT; with special working values there is room to explore. Unspecified details are not reinterpreted as asks and answers.
+- **Passed and unpassed hands**: a direct 4NT over a 1NT/2NT opening is the same quantitative 4NT whether or not responder is a passed hand. The initial Pass is reflected in the strength estimate, but it does not change the meaning. When the opponents have intervened (any call other than Pass), this section does not apply ([Undefined]).
+- **Declining and accepting**: opener declines with Pass and accepts with 6NT (a natural final contract, TO PLAY). Quantitative 4NT is not an ace ask, so there is no obligation to answer. Five-level calls by opener do not carry the meaning of an answer showing a number of aces ([Undefined]). After the accepting 6NT, responder normally passes.
+- **Direct 6NT**: a **direct 6NT** over a 1NT/2NT opening names the natural final contract (TO PLAY, NF). It is neither an invitation nor an ace ask, and there is no obligation to answer. There is no public guarantee of HCP or of a number of aces. The meaning is the same whether or not responder is a passed hand. Opener takes it as the final contract and normally adopts it by Pass. When the opponents have intervened (any call other than Pass), this does not apply ([Undefined]). It is not extended to other direct high NT bids such as 5NT or 7NT ([Undefined]).
 
-[CPU unsupported] The CPU neither initiates nor answers quantitative 4NT ([chapter 13](#13-appendix-a-cpu-implementation-status-and-constraints)).
+[CPU criterion] Over a 2NT opening, the CPU as responder bids quantitative 4NT with no five-card major and 9–10 HCP, and bids 6NT directly with 11 HCP or more (a combined 33 or more is certain). Over a 1NT opening, the CPU does not initiate quantitative 4NT. The CPU as opener evaluates both declining (Pass) and accepting (6NT) and chooses between them: it declines at or below the lower limit (16 for 1NT, 22 for 2NT), accepts at or above the upper limit (18 for 1NT, 24 for 2NT), and in between (17, 23) accepts with two or more aces and declines with one or none. Facing a direct 6NT, the CPU as opener chooses the Pass that adopts it as the final contract (it does not explore the seven level). For the support status, see [chapter 13](#13-appendix-a-cpu-implementation-status-and-constraints).
 
 ### 9.4 Ending by passing an artificial answer, and slam principles
 
@@ -833,7 +836,7 @@ Even where parts are undefined, the following are always required.
 
 ## 13. Appendix A: CPU implementation status and constraints
 
-This appendix describes the status of the CPU implementation, not the meaning of the system. The implementation covered is bidding AI `Ichigaya-1.8.0` (Bridge Atelier 1.14.6). Adjustable coefficients, thresholds and candidate scores are not included (they are managed in code).
+This appendix describes the status of the CPU implementation, not the meaning of the system. The implementation covered is bidding AI `Ichigaya-1.9.1` (Bridge Atelier 1.14.8). Adjustable coefficients, thresholds and candidate scores are not included (they are managed in code).
 
 ### 13.1 Support by convention
 
@@ -841,9 +844,10 @@ This appendix describes the status of the CPU implementation, not the meaning of
 |---|---|---|---|---|
 | Stayman | Yes | Yes | Yes (the continuations of [7.2](#72-stayman)) | In undefined NT sequences and after intervention, continues legally (existing obligations are kept; cancellations are recorded with the reason) |
 | Jacoby 2NT | **No** | **[CPU unsupported]** | **[CPU unsupported]** | — |
-| Gerber | **No** | Yes (aces and kings) | Not applicable, because the asker is the human | In undefined cases and after intervention, continues legally and records obligation breaches separately |
+| Gerber | **No** | Yes (aces and kings; the same whether or not responder is a passed hand) | The answerer adopts the asker's final contract by Pass (the asker is the human) | In undefined cases and after intervention, continues legally and records obligation breaches separately |
 | Plain Blackwood | Yes | Yes | Yes (stopping, comparing small slam and grand slam, 5NT, adoption by passing an artificial answer) | Same as above |
-| Quantitative 4NT | **No** | **[CPU unsupported]** | — | — |
+| Quantitative 4NT | Yes (over 2NT, under the conditions of [13.4](#134-list-of-cpu-criterion-items-in-this-document)). **No** over 1NT | Yes (declines with Pass, accepts with 6NT; over both 1NT and 2NT, and the same whether or not responder is a passed hand) | Yes (responder adopts the accepting 6NT by Pass) | Not applicable after intervention (undefined) |
+| Direct 6NT ([9.3](#93-quantitative-4nt)) | Yes (over 2NT, under the conditions of [13.4](#134-list-of-cpu-criterion-items-in-this-document)). **No** over 1NT | Not an ask (no answer) | Yes (opener adopts it as the final contract by Pass; over both 1NT and 2NT, and the same whether or not responder is a passed hand) | Not applicable after intervention (undefined) |
 | Artificial FSF A–D | Yes | Yes | Yes, for continuations fixed by the system | Undefined continuations and intervention are not filled in (independent obligations are kept; continues legally) |
 | Ichigaya Refrain | Yes | Yes | Keeps track of the king/queen ask state. Evaluation after the answers is simple. Never passes an artificial answer (a human's Pass is recorded as an obligation breach) | — |
 | Special 4M (D04) | Yes (conditions in [13.4](#134-list-of-cpu-criterion-items-in-this-document)) | Responder bids 4NT or passes | Responses other than 4NT are undefined in the system | — |
@@ -854,6 +858,7 @@ This appendix describes the status of the CPU implementation, not the meaning of
 ### 13.2 Partial implementation
 
 - 2NT opening and strong natural two-bids: the CPU chooses them with its older selection logic (2NT is 22–24 with no five-card suit; a strong two-bid is 22+ in the longest suit). The meaning shown is PARTIAL (only partly defined), and the on-screen hint shows no numbers.
+- Responses to the 2NT opening: the CPU responds with its older response logic (3M with a five-card major; otherwise Pass with 0–2 HCP, 3NT with 3–8, quantitative 4NT with 9–10, and 6NT with 11 or more). Quantitative 4NT and direct 6NT ([9.3](#93-quantitative-4nt)) and Gerber ([9.1](#91-gerber)) are defined; the meaning shown for the other responses (3M, 3NT and so on) is undefined.
 - Responses to strong natural two-bids (F02): the CPU responds with its older response logic.
 - Competition: only the complete contexts of [chapter 11](#11-competition-double-and-intervention) and the penalty Double at the four level or higher. There are no general overcalls or takeout Doubles, and the CPU is passive when the opponents have bid first.
 - Additional natural comparisons for passed hands and competition: partially supported (CPU hypotheses, not new public guarantees).
@@ -875,6 +880,9 @@ Items recorded as [CPU criterion] in the body of this document:
 | Opening the special 4M: the longest suit is a major of eight or more cards headed by the A, K and Q, and the length of that suit plus the number of side aces is 10 or more. No HCP condition. Compared with other candidates by evaluation score | [3.6](#36-special-4m-d04) |
 | Responding to the special 4M: 4NT with 14+ HCP and two or more aces; otherwise Pass | [3.6](#36-special-4m-d04) |
 | The final contract chosen by the asker of the 4NT ask over the special 4M (in the suit of opener's 4M; at the six level with a total of 3 or more, otherwise at the five level) | [9.5](#95-4nt-ask-over-the-special-4m) |
+| Initiating quantitative 4NT (over 2NT, 9–10 HCP with no five-card major; 6NT directly with 11 HCP or more; not initiated over 1NT) | [9.3](#93-quantitative-4nt) |
+| Declining or accepting quantitative 4NT (declines at or below the lower limit, accepts at or above the upper limit, and in between accepts with two or more aces) | [9.3](#93-quantitative-4nt) |
+| Adopting a direct 6NT (opener passes it as the final contract; the seven level is not explored) | [9.3](#93-quantitative-4nt) |
 | Conditions for opening a weak three-level bid (12 HCP or less, quality with six cards) | [3.4](#34-weak-three-level-openings) |
 | First-response choice with weak hands (the three conditions facing 1♣) | [4.2](#42-first-response-choice-with-weak-hands) |
 | Guideline for using Stayman (typically 8+) and for its continuations | [7.2](#72-stayman) |
@@ -962,7 +970,8 @@ Items recorded as [CPU criterion] in the body of this document:
 | [7.2](#72-stayman) | Game and invitations after Stayman | NT-M-GAME, ST-RAISE-INV |
 | [9.1](#91-gerber) | Gerber | GERBER, GERBER-A, GERBER-K |
 | [9.2](#92-plain-blackwood), [9.4](#94-ending-by-passing-an-artificial-answer-and-slam-principles) | Plain Blackwood; adoption by passing an artificial answer | D08, D08-A, D08-K, D08-ADOPT |
-| [9.3](#93-quantitative-4nt) | Quantitative 4NT | QUANT4NT |
+| [9.3](#93-quantitative-4nt) | Quantitative 4NT, the accepting 6NT | QUANT4NT, QUANT4NT-ACCEPT |
+| [9.3](#93-quantitative-4nt) | Direct 6NT over 1NT/2NT | NT-DIRECT-6NT |
 | [11.5](#115-limited-natural-raise-after-intervention) | Limited natural raise after intervention | P0-SUPPORT |
 | [11.3](#113-intervention-over-artificial-asks), [11.4](#114-intervention-over-natural-f1) | Reason for a cancellation by intervention (recorded) | INTERVENTION-BID, P0-INTERVENTION |
 | [9.5](#95-4nt-ask-over-the-special-4m) | 4NT ask over the special 4M, its answers, the next asks (kings, queens), the final contract | LEGACY4NT, LEGACY4NT-14 / -13 / -12, LEGACY4NT-ANSWER, LEGACY4NT-ASK, LEGACY4NT-FINAL |
