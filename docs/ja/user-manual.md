@@ -4,7 +4,7 @@
 
 Bridge Atelierの操作、設定、得点、振り返りを説明します。**Windows版を基準**とし、Web版との違いは第11章にまとめます。市ヶ谷ビディング規約の個別の取り決めは[ビディング規約](bidding-system.md)を参照してください。
 
-> この説明は Bridge Atelier 1.14.9 に基づきます。
+> この説明は Bridge Atelier 1.14.10 に基づきます。
 
 ## 目次
 
